@@ -11714,9 +11714,10 @@ body:not(.device-touch) #gotoTop {
 -----------------------------------------------------------------*/
 
 
-.error404 {
+div.error404 {
 	display: block;
 	color: #DDD;
+	font-size: 200px;
 }
 
 .error404-wrap .container { z-index: 7; }
