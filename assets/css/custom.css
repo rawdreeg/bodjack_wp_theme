@@ -19,3 +19,7 @@
 #page-title .container p{ margin: 0; }
 
 #wp-calendar{ width: 100%; }
+
+ul#menu-footer li {
+    list-style: none;
+}

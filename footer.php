@@ -9,31 +9,78 @@
     <div class="container clearfix">
 
         <div class="col_half">
-        Copyrights &copy; 2022.<br>
+        Copyrights &copy; <?php echo date("Y"); ?>.<br>
+        
         <div class="copyright-links">
-            <a href="#">Privacy Policy</a>
+        <?php
+			if ( has_nav_menu( 'footer' ) ) {
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer',
+						'container'      => false,
+						'fallback_cb'    => false,
+						'depth'          => 1,
+					)
+				);
+			}
+			?>
         </div>
         </div>
 
         <div class="col_half col_last tright">
-        <div class="fright clearfix">
-            <a href="#" class="social-icon si-small si-borderless si-facebook">
-            <i class="icon-facebook"></i>
-            <i class="icon-facebook"></i>
-            </a>
+            <div class="fright clearfix">
+            <?php
+                    if (get_theme_mod( 'rb_facebook_handle')) {
+                    ?>
+                        <a href="https://facebook.com/<?php echo get_theme_mod( 'rb_facebook_handle' ) ?>" class="social-icon si-small si-borderless si-facebook">
+                            <i class="icon-facebook"></i>
+                            <i class="icon-facebook"></i>
+                        </a>				
+                    <?php		
+                        }
+                    ?>
 
-            <a href="#" class="social-icon si-small si-borderless si-twitter">
-            <i class="icon-twitter"></i>
-            <i class="icon-twitter"></i>
-            </a>
+                    <?php
+                        if (get_theme_mod( 'rb_twitter_handle')) {
+                    ?>
+                        <a href="https://twitter.com/<?php echo get_theme_mod( 'rb_twitter_handle' ) ?>" class="social-icon si-small si-borderless si-twitter">
+                            <i class="icon-twitter"></i>
+                            <i class="icon-twitter"></i>
+                        </a>
+                    <?php		
+                        }
+                    ?>
+                
+                <?php
+                        if (get_theme_mod( 'rb_instagram_handle')) {
+                    ?>
+                        <a href="https://instagram.com/<?php echo get_theme_mod( 'rb_instagram_handle' ) ?>" class="social-icon si-small si-borderless si-instagram">
+                            <i class="icon-instagram2"></i>
+                            <i class="icon-instagram2"></i>
+                        </a>
+                    <?php		
+                        }
+                    ?>
+    
 
-        </div>
+            </div>
 
-        <div class="clear"></div>
-
-        <i class="icon-envelope2"></i> info@email.com <span class="middot">&middot;</span>
-        <i class="icon-headphones"></i> +55-5-5555-5555
-        </div>
+            <div class="clear"></div>
+                <?php	
+                    if (get_theme_mod( 'rb_email')) {
+                ?>
+                        <i class="icon-envelope2"></i> <?php echo get_theme_mod( 'rb_email' ) ?> <span class="middot">&middot;</span>
+                <?php		
+                    }
+                ?>
+                <?php	
+                    if (get_theme_mod( 'rb_phone')) {
+                ?>
+                        <i class="icon-headphones"></i> <?php echo get_theme_mod( 'rb_phone' ) ?>
+                <?php		
+                    }
+                ?>
+            </div>
 
     </div>
 
