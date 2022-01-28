@@ -9,7 +9,7 @@
     <div class="container clearfix">
 
         <div class="col_half">
-        Copyrights &copy; 2017 All Rights Reserved by Udemy.<br>
+        Copyrights &copy; 2022.<br>
         <div class="copyright-links">
             <a href="#">Privacy Policy</a>
         </div>

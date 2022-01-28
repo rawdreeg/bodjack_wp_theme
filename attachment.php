@@ -40,7 +40,7 @@
                         <div class="entry-content notopmargin">
 
                         <!-- Start direct download -->
-                        <a href="<?php echo $post->guid ?>"> <?php _e('Direct Download'); ?> </a>
+                        <a href="<?php echo $post->guid ?>"> <?php _e('Direct Download', 'bodjack'); ?> </a>
 
                             <?php the_content(); ?>
 

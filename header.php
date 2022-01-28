@@ -11,11 +11,6 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
-  <!-- Document Title
-	============================================= -->
-  <title>Index Template</title>
-
 </head>
 
 <body <?php body_class( "stretched no-transition" ) ?>>
@@ -34,11 +29,18 @@
 		  <!-- Top Links
 		  ============================================= -->
 		  <div class="top-links">
-			<ul>
-			  <li><a href="#">Home</a></li>
-			  <li><a href="#">FAQs</a></li>
-			  <li><a href="#">Contact</a></li>
-			</ul>
+		  <?php
+			if ( has_nav_menu( 'top' ) ) {
+				wp_nav_menu(
+					array(
+						'theme_location' => 'top',
+						'container'      => false,
+						'fallback_cb'    => false,
+						'depth'          => 1,
+					)
+				);
+			}
+			?>
 		  </div><!-- .top-links end -->
 
 		</div>
@@ -92,11 +94,23 @@
 		<!-- Logo
 		============================================= -->
 		<div id="logo">
-		  <a href="#" class="standard-logo">Udemy</a>
+			<?php 
+				// check if logo is set.
+				if ( has_custom_logo() ) {
+					the_custom_logo();
+				} else {
+					echo '<a href="'.home_url("/").'" class="standard-logo"> ' . get_bloginfo('name') . '</a>';
+				}
+			?>	
 		</div><!-- #logo end -->
 
 		<div class="top-advert">
-		  <img src="images/magazine/ad.jpg">
+		   <?php 
+		   	if(function_exists('quads_ad')){
+		   		echo quads_ad( array( 'location' => 'header' ) );
+		   	}
+		   
+		   ?>
 		</div>
 
 	  </div>
