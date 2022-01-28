@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html <?php language_attributes(); ?>>
 
 <head>
 
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="content-type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
 
   <!-- Stylesheets
 	============================================= -->
