@@ -22,4 +22,16 @@
 
 ul#menu-footer li {
     list-style: none;
+    display: inline;
+}
+ul#menu-footer li::after{
+	content: '/'
+}
+
+ul#menu-footer li::after{
+	content: '/'
+}
+
+ul#menu-footer li:last-child::after {
+   content: "";
 }

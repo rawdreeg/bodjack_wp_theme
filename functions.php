@@ -10,6 +10,7 @@ require get_theme_file_path( '/includes/setup.php' );
 require get_theme_file_path( '/includes/custom-nav-walker.php' );
 require get_theme_file_path( '/includes/widgets.php' );
 require get_theme_file_path( '/includes/customizer/social.php' );
+require get_theme_file_path( '/includes/customizer/theme-settings.php' );
 require get_theme_file_path( '/includes/theme-customizer.php' );
 
 // Hooks

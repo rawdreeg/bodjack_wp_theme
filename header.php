@@ -177,11 +177,14 @@
 
 			<!-- Top Cart
 			============================================= -->
+			<?php
+				if (get_theme_mod( 'rb_header_show_cart') === "yes") {
+			?>
 			<div id="top-cart">
 			  <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
 			  <div class="top-cart-content">
 				<div class="top-cart-title">
-				  <h4>Shopping Cart</h4>
+				  <h4><?php _e('Shopping Cart', 'bodjack') ?></h4>
 				</div>
 				<div class="top-cart-items">
 				  <div class="top-cart-item clearfix">
@@ -208,23 +211,29 @@
 				<div class="top-cart-action clearfix">
 				  <span class="fleft top-checkout-price">$114.95</span>
 				  <button class="button button-3d button-small nomargin fright">
-					View Cart
+					<?php _e('View Cart', 'bodjack') ?>
 				  </button>
 				</div>
 			  </div>
 			</div><!-- #top-cart end -->
+			<?php } ?>
 
 			<!-- Top Search
 			============================================= -->
+			<?php
+				if (get_theme_mod( 'rb_header_show_search') === "yes") {
+			?>
 			<div id="top-search">
 			  <a href="#" id="top-search-trigger">
 				<i class="icon-search3"></i><i class="icon-line-cross"></i>
 			  </a>
-			  <form action="#" method="get">
-				<input type="text" name="q" class="form-control" placeholder="Type &amp; Hit Enter.." value="">
+			  <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" role="search">
+				<input type="text" name="s" class="form-control" placeholder="<?php _e('Type &amp; Hit Enter...', 'bodjack') ?>" value="<?php the_search_query(); ?>">
 			  </form>
 			</div><!-- #top-search end -->
-
+			<?php
+				}
+			?>
 		  </div>
 
 		</nav><!-- #primary-menu end -->

@@ -9,8 +9,11 @@
     <div class="container clearfix">
 
         <div class="col_half">
-        Copyrights &copy; <?php echo date("Y"); ?>.<br>
-        
+        <?php
+			if (get_theme_mod( 'rb_footer_copyright_text')) {
+                echo get_theme_mod( 'rb_footer_copyright_text' );
+            }
+        ?>
         <div class="copyright-links">
         <?php
 			if ( has_nav_menu( 'footer' ) ) {
